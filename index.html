@@ -6,17 +6,17 @@
 </head>
 <body>
   <h1>Assets inside /main</h1>
-  <ul id="file-list"></ul>
+  <ul id="fl"></ul>
 
   <script>
     fetch(`https://api.github.com/repos/respnull/assets/contents/`)
       .then(res => res.json())
       .then(data => {
-        const ul = document.getElementById("file-list");
+        const ul = document.getElementById("fl");
         data.forEach(file => {
           const li = document.createElement("li");
           const a = document.createElement("a");
-          a.href = file.download_url;
+          a.href = `https://${username}.github.io/${repo}/${file.name}`;
           a.textContent = file.name;
           li.appendChild(a);
           ul.appendChild(li);
