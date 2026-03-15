@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Assets inside \/main</title>
+  <title>Assets inside /main</title>
 </head>
 <body>
-  <h1>Assets</h1>
+  <h1>Assets inside /main</h1>
   <ul id="file-list"></ul>
 
   <script>
-    fetch(`https://api.github.com/repos/respnull/assets/contents/assets`)
+    fetch(`https://api.github.com/repos/respnull/assets/contents/`)
       .then(res => res.json())
       .then(data => {
         const ul = document.getElementById("file-list");
